@@ -1,0 +1,18 @@
+[
+{
+  "modid": "tfcagedbooze",
+  "name": "TFC Aged Booze",
+  "description": "This mod adds aged drink variants to TerraFirmaCraft which can offer various effects",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["QueenPieIII"],
+  "credits": "Lumintorious for making the original \"TFC Aged Drinks\" mod",
+  "logoFile": "",
+  "screenshots": [],
+  "requiredMods": ["terrafirmacraft"],
+  "dependencies": ["Forge@[10.13.4.1448,)", "terrafirmacraft"],
+  "useDependencyInformation": "true"
+}
+]
