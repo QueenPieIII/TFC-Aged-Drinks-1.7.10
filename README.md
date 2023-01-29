@@ -14,4 +14,3 @@ You will also need a custom **ForgeGradle** jar to prevent your tasks from faili
 ------------
 
 Thanks to **Lumintorious** for making the original [TFC Aged Drinks](https://www.curseforge.com/minecraft/mc-mods/tfc-aged-drinks "TFC Aged Drinks") mod
-Thanks to **Lumintorious** for making the original [TFC Aged Drinks](https://www.curseforge.com/minecraft/mc-mods/tfc-aged-drinks "TFC Aged Drinks") mod
