@@ -30,5 +30,4 @@ eclipse/
 bin/
 .settings/
 .gradle
-.project
 .classpath
