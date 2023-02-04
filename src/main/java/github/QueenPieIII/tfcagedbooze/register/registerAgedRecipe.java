@@ -15,9 +15,9 @@ public class registerAgedRecipe
         for(TABAgedFluids fluid : TABAgedFluids.values())
         {
             String fluidName = fluid.name().toLowerCase();
-            FluidStack inFluidStack = new FluidStack(FluidRegistry.getFluid(fluidName), 1000);
-            FluidStack outFluidStack = new FluidStack(fluid.getFluid(), 1000);
-            BarrelManager.getInstance().addRecipe(new AgedRecipe(inFluidStack, outFluidStack, fluid.getSealTime()));
+            FluidStack inFluidStack = new FluidStack(FluidRegistry.getFluid(fluidName), 10000);
+            FluidStack outFluidStack = new FluidStack(fluid.getFluid(), 10000);
+            BarrelManager.getInstance().addRecipe(new AgedRecipe(inFluidStack, 20, 200, outFluidStack, fluid.getSealTime()));
         }      
     }    
 }

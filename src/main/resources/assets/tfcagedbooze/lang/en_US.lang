@@ -1,3 +1,4 @@
+# Items
 item.AgedWhiskey.name=Aged Whiskey
 item.AgedRyewhiskey.name=Aged Rye Whiskey
 item.AgedCornwhiskey.name=Aged Corn Whiskey
@@ -6,3 +7,13 @@ item.AgedSake.name=Aged Sake
 item.AgedCider.name=Aged Cider
 item.AgedBeer.name=Aged Beer
 item.AgedVodka.name=Aged Vodka
+
+# Fluids
+fluid.agedwhiskey=Aged Whiskey
+fluid.agedryewhiskey=Aged Rye Whiskey
+fluid.agedcornwhiskey=Aged Corn Whiskey
+fluid.agedrum=Aged Rum
+fluid.agedsake=Aged Sake
+fluid.agedcider=Aged Cider
+fluid.agedbeer=Aged Beer
+fluid.agedvodka=Aged Vodka

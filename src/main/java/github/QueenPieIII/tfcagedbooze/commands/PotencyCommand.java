@@ -2,16 +2,15 @@ package github.QueenPieIII.tfcagedbooze.commands;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
+import net.minecraftforge.client.model.AdvancedModelLoader;
 
 public class PotencyCommand extends CommandBase
 {
     @Override
     public String getCommandName()
     {
-        return "getpotency";
+        return "getsuffixes";
     }
 
     @Override
@@ -22,10 +21,13 @@ public class PotencyCommand extends CommandBase
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
-        EntityPlayerMP player = getCommandSenderAsPlayer(sender);
-        Item heldItem = player.inventory.getCurrentItem().getItem();
-        sender.addChatMessage(new ChatComponentText(heldItem.getUnlocalizedName()));
-        sender.addChatMessage(new ChatComponentText(heldItem.getUnlocalizedName().substring(5)));
+        String text = "";
+        for(String suffix : AdvancedModelLoader.getSupportedSuffixes())
+        {
+            text += suffix + " ";
+        }
+        sender.addChatMessage(new ChatComponentText(text));
+
     }
 
     @Override
