@@ -5,8 +5,6 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import github.QueenPieIII.tfcagedbooze.commands.*;
 import github.QueenPieIII.tfcagedbooze.register.*;
 
-
-
 public final class ModRegister
 {
     public static void registerCommands(FMLServerStartingEvent event)
@@ -35,5 +33,10 @@ public final class ModRegister
         TFCAgedBooze.Log.debug("Registering recipes...");
         registerAgedRecipe.register();
         TFCAgedBooze.Log.info("Successfully registered recipes!");
+    }
+
+    public static void registerModels()
+    {
+
     }
 }

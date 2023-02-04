@@ -36,7 +36,7 @@ public enum TABAgedFluids
         this.fluid = new FluidBaseTFC("aged" + fluidName).setBaseColor(this.color);
         this.effect = new PotionEffect(effect.id, time, strength);
         this.item = new ItemPotionAlcohol(this.getPotionEffect()).setUnlocalizedName(makeName(fluidName)).setCreativeTab(TFCTabs.TFC_FOODS);
-        this.sealTime = 720;
+        this.sealTime = 2160;
     }
 
     TABAgedFluids(Potion effect, int strength, int time, int sealTime)
