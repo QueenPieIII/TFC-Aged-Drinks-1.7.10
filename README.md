@@ -2,6 +2,7 @@
 > This is a recreation of the [TFC Aged Drinks](https://www.curseforge.com/minecraft/mc-mods/tfc-aged-drinks "TFC Aged Drinks") mod! If you are looking for the official repository of the  for **TerraFirmaCraft: The Next Generation** version then this is not the place.
 
 EVERYTHING RIGHT NOW IS A MESS! WILL FIX IT LATER!!!!
+THIS IS ALSO MY FIRST MOD AND FIRST TIME USING JAVA!!
 
 This mod adds aged drink variants to TerraFirmaCraft which can offer various effects!
 
