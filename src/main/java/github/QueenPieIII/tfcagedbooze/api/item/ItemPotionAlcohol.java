@@ -36,7 +36,8 @@ public class ItemPotionAlcohol extends ItemAlcohol
     }
 
     @Override
-    public ItemStack onEaten(ItemStack is, World world, EntityPlayer player) {
+    public ItemStack onEaten(ItemStack is, World world, EntityPlayer player)
+    {
         super.onEaten(is, world, player);
         player.addPotionEffect(effect);
         return is;

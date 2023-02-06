@@ -17,3 +17,6 @@ fluid.agedsake=Aged Sake
 fluid.agedcider=Aged Cider
 fluid.agedbeer=Aged Beer
 fluid.agedvodka=Aged Vodka
+
+# Tile
+tile.Cirno.name=Cirno

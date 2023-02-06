@@ -30,13 +30,7 @@ public enum TABAgedFluids
 
     TABAgedFluids(Potion effect, int strength, int time)
     {
-        String fluidName = this.name().toLowerCase();
-        Fluid regFluid = FluidRegistry.getFluid(fluidName);
-        this.color = regFluid.getColor();
-        this.fluid = new FluidBaseTFC("aged" + fluidName).setBaseColor(this.color);
-        this.effect = new PotionEffect(effect.id, time, strength);
-        this.item = new ItemPotionAlcohol(this.getPotionEffect()).setUnlocalizedName(makeName(fluidName)).setCreativeTab(TFCTabs.TFC_FOODS);
-        this.sealTime = 2160;
+        this(effect, strength, time, 2160);
     }
 
     TABAgedFluids(Potion effect, int strength, int time, int sealTime)
@@ -46,14 +40,13 @@ public enum TABAgedFluids
         this.color = regFluid.getColor();
         this.fluid = new FluidBaseTFC("aged" + fluidName).setBaseColor(this.color);
         this.effect = new PotionEffect(effect.id, time, strength);
-        this.item = new ItemPotionAlcohol(this.getPotionEffect()).setUnlocalizedName(makeName(fluidName)).setCreativeTab(TFCTabs.TFC_FOODS);
+        this.item = new ItemPotionAlcohol(this.effect).setUnlocalizedName(makeName(fluidName)).setCreativeTab(TFCTabs.TFC_FOODS);
         this.sealTime = sealTime;
     }
 
     public static String makeName(String name)
     {
-        char[] ret = ("aged" + name).toCharArray();
-        ret[0] = Character.toUpperCase(ret[0]);
+        char[] ret = ("Aged" + name).toCharArray();
         ret[4] = Character.toUpperCase(ret[4]);
         return new String(ret);
     }
