@@ -10,10 +10,13 @@ import com.bioxx.tfc.api.TFCItems;
 import com.bioxx.tfc.api.Crafting.BarrelRecipe;
 import com.bioxx.tfc.api.Interfaces.IFood;
 
+import github.QueenPieIII.tfcagedbooze.config.Config;
+
 public class AgedRecipe extends BarrelRecipe
-{  
+{
     private float requiredPrecent;
     private float variedPrecent;
+    
     public AgedRecipe(FluidStack inputFluid, float sugarWeight, float sugarBonus, FluidStack outputFluid)
     {
         this(inputFluid, sugarWeight, sugarBonus, outputFluid, 2160);
@@ -21,7 +24,7 @@ public class AgedRecipe extends BarrelRecipe
 
     public AgedRecipe(FluidStack inputFluid, float sugarWeight, float sugarBonus, FluidStack outputFluid, int sealTime)
     {
-        super(ItemFoodTFC.createTag(new ItemStack(TFCItems.sugar), sugarWeight), inputFluid, null, outputFluid);
+        super(Config.isSugarAgingEnabled ? ItemFoodTFC.createTag(new ItemStack(TFCItems.sugar), sugarWeight) : null, inputFluid, null, outputFluid);
         this.requiredPrecent = sugarWeight/(160f * (inputFluid.amount/10000f));
         this.variedPrecent = requiredPrecent * (sugarBonus/100 + 1);
         this.sealTime = sealTime;
@@ -30,6 +33,10 @@ public class AgedRecipe extends BarrelRecipe
     @Override
     public Boolean matches(ItemStack item, FluidStack fluid)
     {
+        if(!Config.isSugarAgingEnabled)
+        {
+            return item == null && recipeFluid.isFluidEqual(fluid);
+        }
         if(item == null || !recipeFluid.isFluidEqual(fluid))
         {
             return false;
@@ -43,6 +50,5 @@ public class AgedRecipe extends BarrelRecipe
             }
         }
         return OreDictionary.itemMatches(recipeIS, item, false);
-        
     }
 }

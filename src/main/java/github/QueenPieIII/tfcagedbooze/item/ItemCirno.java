@@ -18,6 +18,7 @@ public class ItemCirno extends ItemTerraBlock
         setUnlocalizedName("cirno");
     }
 
+    @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
     public void addInformation(ItemStack is, EntityPlayer player, List arraylist, boolean flag)
     {

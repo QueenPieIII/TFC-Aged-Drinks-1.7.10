@@ -1,15 +1,10 @@
 package github.QueenPieIII.tfcagedbooze.api;
 
-import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.bioxx.tfc.Core.FluidBaseTFC;
-import com.bioxx.tfc.Core.TFCTabs;
-
-import github.QueenPieIII.tfcagedbooze.api.item.ItemPotionAlcohol;
 
 public enum TABAgedFluids
 {
@@ -22,25 +17,49 @@ public enum TABAgedFluids
     BEER(Potion.field_76434_w, 1,9600), // field_76434_w is Health Boost!
     SAKE(Potion.damageBoost, 0, 9600);
 
+    private final String niceName;
     private final Fluid fluid;
-    private final Item item;
-    private final PotionEffect effect;
     private final int color;
+    private final Potion effect;
+    private final int strength;
+    private final int time;
+    private final int minSugar;
+    private final int maxSugarPrecent;
     private final int sealTime;
 
     TABAgedFluids(Potion effect, int strength, int time)
     {
-        this(effect, strength, time, 2160);
+        this(effect, strength, time, 20, 200);
     }
 
     TABAgedFluids(Potion effect, int strength, int time, int sealTime)
     {
+        this(effect, strength, time, 20, 200, sealTime);
+    }
+
+    TABAgedFluids(Potion effect, int strength, int time, int MinSugar, int maxSugarPrecent)
+    {
+        this(effect, strength, time, MinSugar, maxSugarPrecent,2160);
+    }
+
+    //TODO: Remove sealTime (it is handled globally by the config file) or make it so each fluid can have a specific sealTime
+    TABAgedFluids(Potion effect, int strength, int time, int minSugar, int maxSugarPrecent, int sealTime)
+    {
         String fluidName = this.name().toLowerCase();
         Fluid regFluid = FluidRegistry.getFluid(fluidName);
+
+        this.niceName = makeName(fluidName);
+
         this.color = regFluid.getColor();
         this.fluid = new FluidBaseTFC("aged" + fluidName).setBaseColor(this.color);
-        this.effect = new PotionEffect(effect.id, time, strength);
-        this.item = new ItemPotionAlcohol(this.effect).setUnlocalizedName(makeName(fluidName)).setCreativeTab(TFCTabs.TFC_FOODS);
+
+        this.minSugar = minSugar;
+        this.maxSugarPrecent = maxSugarPrecent;
+
+        this.strength = strength;
+        this.time = time;
+        this.effect = effect;
+
         this.sealTime = sealTime;
     }
 
@@ -66,13 +85,33 @@ public enum TABAgedFluids
         return fluid;
     }
 
-    public PotionEffect getPotionEffect()
+    public Potion getPotion()
     {
         return effect;
     }
 
-    public Item getItem()
+    public int getEffectStrength()
     {
-        return item;
+        return strength;
+    }
+
+    public int getEffectTime() 
+    {
+        return time;
+    }
+
+    public int getMinSugar()
+    {
+        return minSugar;
+    }
+
+    public int getMaxSugarPrecent()
+    {
+        return maxSugarPrecent;
+    }
+
+    public String getNiceName()
+    {
+        return niceName;
     }
 }
