@@ -12,7 +12,7 @@ import net.minecraftforge.client.model.IModelCustom;
 public class RenderCirno extends TileEntitySpecialRenderer
 {
     static ResourceLocation texture = new ResourceLocation("tfcagedbooze:models/block/cirno_low_u1_v1.png");
-    static IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation("tfcagedbooze:models/block/cirno.objm"));
+    static IModelCustom model = AdvancedModelLoader.loadModel(new ResourceLocation("tfcagedbooze:models/block/cirno.obj"));
     public RenderCirno()
     {
         //texture = new ResourceLocation("tfcagedbooze:models/block/cirno_low_u1_v1.png");
