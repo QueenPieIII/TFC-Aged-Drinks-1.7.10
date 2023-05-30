@@ -15,7 +15,7 @@ public class ConfigProperties
         this.minSugar = minSugar;
         this.maxSugarPrecent = maxSugarPrecent;
         this.effectId = effectId;
-        this.effectStrength = effectStrength;
+        this.effectStrength = effectStrength-1;
         this.effectTime = effectTime;
     }
 

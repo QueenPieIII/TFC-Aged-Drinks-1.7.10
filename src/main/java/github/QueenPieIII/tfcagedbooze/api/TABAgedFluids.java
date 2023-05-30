@@ -14,7 +14,7 @@ public enum TABAgedFluids
     CORNWHISKEY(Potion.digSpeed, 1, 9600),
     VODKA(Potion.resistance, 0, 9600),
     CIDER(Potion.moveSpeed, 1, 9600),
-    BEER(Potion.field_76434_w, 1,9600), // field_76434_w is Health Boost!
+    BEER(Potion.field_76434_w, 1,9600), // field_76434_w is Health Boost! (kinda useless)
     SAKE(Potion.damageBoost, 0, 9600);
 
     private final String niceName;
