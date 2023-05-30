@@ -39,7 +39,8 @@ public class ItemPotionAlcohol extends ItemAlcohol
     public ItemStack onEaten(ItemStack is, World world, EntityPlayer player)
     {
         super.onEaten(is, world, player);
-        player.addPotionEffect(effect);
+        if(!world.isRemote)
+            player.addPotionEffect(new PotionEffect(effect));
         return is;
     }
 
@@ -53,7 +54,7 @@ public class ItemPotionAlcohol extends ItemAlcohol
     {
         String effectName = StatCollector.translateToLocal(((ItemPotionAlcohol)is.getItem()).getEffect().getEffectName());
         int effectStrength = ((ItemPotionAlcohol)is.getItem()).getEffect().getAmplifier();
-        String effectLevel = effectStrength < effectsList.length ? effectsList[effectStrength].name() : Integer.toString(effectStrength);
+        String effectLevel = effectStrength < effectsList.length ? effectsList[effectStrength].name() : Integer.toString(effectStrength+1);
         arraylist.add(effectName + " " + effectLevel);
     }
 }
